@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <iomanip>
 
 using namespace std;
@@ -14,24 +13,24 @@ int main(){
 
     }
 
-    string *(*values);
-    string value;
+    double *(*values);
+    double value;
     int n(0);
+    double *a, *b, *c, *y;
 
-    string *a, *b, *c, *y;
     inputFile >> n;
 
-    values = new string*[n];
+    values = new double*[n];
 
     // allocating vectors in each line
     for(int i=0; i<n; i++){
-        values[i] = new string[n];
+        values[i] = new double[n];
     }
 
-    a = new string[n];
-    b = new string[n];
-    c = new string[n];
-    y = new string[n];
+    a = new double[n];
+    b = new double[n];
+    c = new double[n];
+    y = new double[n];
 
     // allocating the value in its place
     for(int i=0; i<n; i++){
@@ -66,7 +65,6 @@ int main(){
     for(int i=0; i<n ; i++){
         for(int j=0; j<n; j++){
             cout << values[i][j] << setw(10);
-
         }
         cout << setw(-10)<<endl;
     }
@@ -83,12 +81,16 @@ int main(){
     }
 
     cout << "Values of c: " << endl;
-    for(int i=0; i<=n; i++){
+    for(int i=0; i<n; i++){
         cout << c[i] << endl;
     }
 
+    cout << "Value of y: " << endl;
+    for(int i=0; i<n; i++){
+        cout << y[i] << endl;
+    }
 
-
+    delete [] *values;
     delete [] values;
     delete [] a;
     delete [] b;
