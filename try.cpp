@@ -1,9 +1,9 @@
-#include "GaussTridiag.hpp"
+#include "ThomasTridiag.hpp"
 
 using namespace std;
 
 int main(){
-    GaussTridiag essai("input.txt");
+    ThomasTridiag essai("input.txt");
     essai.deserializeMatrix();
     essai.displayMatrix(essai.getMatrix());
     essai.systemResolution();
