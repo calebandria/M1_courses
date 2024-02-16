@@ -74,6 +74,23 @@ void GaussTridiag::displayMatrix(double **matrix){
     }
 }
 
+double** GaussTridiag::transpose(double **matrix, int row, int col){
+    double** transposedMatrix = new double*[row];
+
+    // Allocate memory for columns
+    for (int i = 0; i < row; ++i) {
+        transposedMatrix[i] = new double[col]; 
+    }
+
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            transposedMatrix[i][j] = matrix[j][i];
+        }
+    }
+    return transposedMatrix;
+    delete [] transposedMatrix;
+}
+
 GaussTridiag::~GaussTridiag(){
     for(int i=0; i<n ; i++)
         delete [] matrix[i];

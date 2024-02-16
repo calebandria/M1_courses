@@ -17,6 +17,7 @@ class GaussTridiag{
         void systemResolution();
         void displayVector(double *vector);
         void displayMatrix(double **matrix);
+        double** transpose(double **matrix, int row, int col);    
         
         //getter
         double **getMatrix();
